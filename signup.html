@@ -17,7 +17,6 @@
             <p class="welcome-message">Join the arena. Create your account.</p>
 
             <a href="#" class="roblox-login-btn">
-                <!-- Using the new Roblox logo you provided -->
                 <img src="https://i.imgur.com/Y43xSjv.png" alt="Roblox Logo">
                 <span>SIGN UP WITH ROBLOX</span>
             </a>
@@ -26,30 +25,28 @@
                 <span>OR</span>
             </div>
 
-            <form>
+            <!-- The form is now simplified -->
+            <form onsubmit="return false;"> <!-- onsubmit="return false;" prevents the page from reloading -->
                 <div class="input-group">
                     <input type="text" id="username" required>
                     <label for="username">Username</label>
                 </div>
                 <div class="input-group">
-                    <input type="email" id="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-group">
                     <input type="password" id="password" required>
                     <label for="password">Password</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="confirm-password" required>
-                    <label for="confirm-password">Confirm Password</label>
                 </div>
 
                 <div class="terms-group">
                     <input type="checkbox" id="terms" required>
-                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a>.</label>
                 </div>
                 
-                <button type="submit" class="login-btn">CREATE ACCOUNT</button>
+                <!-- 
+                IMPORTANT CHANGE: This is no longer a submit button.
+                It's now a link styled like a button that takes you to the dashboard.
+                This makes our prototype feel like it's working.
+                -->
+                <a href="dashboard.html" class="login-btn">CREATE ACCOUNT</a>
             </form>
 
             <p class="signup-link">
