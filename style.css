@@ -1,257 +1,283 @@
-/* --- Color Palette --- */
+/* =================================================== */
+/*               DASHBOARD STYLES                      */
+/* =================================================== */
+
+/* --- FACEIT-inspired color override --- */
 :root {
-    --primary-orange: #FF6600;
-    --dark-bg: #121212;
-    --card-bg: #1C1C1C;
-    --input-bg: #2A2A2A;
-    --text-primary: #E0E0E0;
-    --text-secondary: #AAAAAA;
+    --faceit-orange: #FF5500;
+    --dark-bg: #181818;
+    --card-bg: #202020;
+    --card-bg-light: #252525;
     --border-color: #333333;
+    --text-primary: #F5F5F5;
+    --text-secondary: #999999;
+    --win-color: #00B341;
+    --loss-color: #D92D2D;
 }
 
-/* --- General & Layout --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
+/* --- Main Dashboard Layout --- */
+.dashboard-container {
+    display: flex;
     background-color: var(--dark-bg);
+    min-height: 100vh;
     color: var(--text-primary);
 }
 
-.login-container {
+/* --- Left Sidebar (Navigation) --- */
+.sidebar {
+    width: 80px;
+    background-color: var(--card-bg);
+    border-right: 1px solid var(--border-color);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    background-image: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.95)), url('https://placehold.co/1920x1080/000000/FF6600?text=DEFUSE+DIVISION');
-    background-size: cover;
-    background-position: center;
+    padding: 20px 0;
+    flex-shrink: 0;
 }
 
-/* --- Login Card Styling --- */
-.login-card {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    width: 420px;
-    max-width: 100%;
-    text-align: center;
-}
-
-.logo {
-    color: var(--primary-orange);
+.sidebar-logo {
+    color: var(--faceit-orange);
     font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 5px;
+    margin-bottom: 40px;
 }
 
-.welcome-message {
-    color: var(--text-secondary);
-    margin-bottom: 30px;
-    font-weight: 400;
-}
-
-/* --- Buttons --- */
-.roblox-login-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.nav-links {
+    list-style: none;
     width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--primary-orange);
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.roblox-login-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 20px rgba(255, 102, 0, 0.3);
-}
-
-.roblox-login-btn img {
-    width: 24px;
-    margin-right: 12px;
-}
-
-.login-btn {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--primary-orange);
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.login-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 20px rgba(255, 102, 0, 0.3);
-}
-
-/* --- Separator --- */
-.separator {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: var(--text-secondary);
-    margin: 25px 0;
-}
-
-.separator::before,
-.separator::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.separator:not(:empty)::before {
-    margin-right: .5em;
-}
-
-.separator:not(:empty)::after {
-    margin-left: .5em;
-}
-
-/* --- Form & Inputs with Floating Labels --- */
-form {
-    text-align: left;
-}
-
-.input-group {
-    position: relative;
-    margin-bottom: 25px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 14px;
-    background: var(--input-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    color: var(--text-primary);
-    font-size: 1rem;
-}
-
-.input-group label {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    color: var(--text-secondary);
-    pointer-events: none;
-    transition: all 0.2s ease;
-}
-
-.input-group input:focus,
-.input-group input:valid {
-    border-color: var(--primary-orange);
-    outline: none;
-}
-
-.input-group input:focus + label,
-.input-group input:valid + label {
-    top: -10px;
-    left: 10px;
-    font-size: 0.8rem;
-    color: var(--primary-orange);
-    padding: 0 5px;
-    background: var(--card-bg);
-}
-
-/* --- Links --- */
-.forgot-password {
+.nav-link {
     display: block;
-    text-align: right;
-    font-size: 0.9rem;
     color: var(--text-secondary);
-    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
     transition: color 0.2s ease;
 }
 
-.forgot-password:hover {
-    color: var(--primary-orange);
-    text-decoration: underline;
+.nav-link:hover, .nav-link.active {
+    color: var(--faceit-orange);
 }
 
-.signup-link {
-    margin-top: 30px;
-    color: var(--text-secondary);
+.nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 4px;
+    background-color: var(--faceit-orange);
+    border-radius: 0 4px 4px 0;
+}
+
+.nav-link:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 90px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
     font-size: 0.9rem;
+    white-space: nowrap;
+    z-index: 10;
 }
 
-.signup-link a {
-    color: var(--primary-orange);
+.nav-footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* --- Main Content (Center) --- */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.top-header h2 {
+    font-size: 1.5rem;
     font-weight: 600;
-    text-decoration: none;
 }
 
-.signup-link a:hover {
-    text-decoration: underline;
-}
-
-/* --- NEW CSS FOR SIGN UP PAGE --- */
-.terms-group {
+.user-profile {
     display: flex;
     align-items: center;
-    margin-top: 5px;
-    margin-bottom: 20px;
+    gap: 20px;
 }
 
-.terms-group input[type="checkbox"] {
-    margin-right: 10px;
-    /* Basic styling for checkbox */
-    appearance: none;
-    background-color: var(--input-bg);
-    border: 1px solid var(--border-color);
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
+.user-profile .fa-bell {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
     cursor: pointer;
+    transition: color 0.2s ease;
+}
+.user-profile .fa-bell:hover { color: var(--text-primary); }
+
+.profile-details {
+    text-align: right;
+}
+
+.username {
+    display: block;
+    font-weight: 600;
+}
+
+.user-elo {
+    display: block;
+    color: var(--faceit-orange);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+}
+
+/* --- Play Card & Recent Matches --- */
+.content-area {
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.play-card {
+    background-color: var(--card-bg-light);
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.game-info h3 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.game-info p {
+    color: var(--text-secondary);
+}
+
+.play-button {
+    background: var(--faceit-orange);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 20px 60px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.play-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 85, 0, 0.3);
+}
+
+.recent-matches {
+    margin-top: 40px;
+}
+
+.recent-matches h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.match-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    background-color: var(--card-bg-light);
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+}
+
+.match-item.win { border-left-color: var(--win-color); }
+.match-item.loss { border-left-color: var(--loss-color); }
+
+.match-result { text-align: right; font-weight: 700; }
+.match-item.win .match-result { color: var(--win-color); }
+.match-item.loss .match-result { color: var(--loss-color); }
+
+
+/* --- Right Sidebar (Social) --- */
+.social-sidebar {
+    width: 280px;
+    background-color: var(--card-bg);
+    border-left: 1px solid var(--border-color);
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.social-sidebar h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.friends-list {
+    list-style: none;
+}
+
+.friend {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.friend:hover {
+    background-color: var(--card-bg-light);
+}
+
+.friend img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
     position: relative;
 }
 
-.terms-group input[type="checkbox"]:checked {
-    background-color: var(--primary-orange);
-    border-color: var(--primary-orange);
-}
-
-.terms-group input[type="checkbox"]:checked::after {
-    content: '✔';
-    font-size: 14px;
-    color: white;
+.friend.online::after {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--win-color);
+    border-radius: 50%;
+    border: 2px solid var(--card-bg);
 }
 
-.terms-group label {
-    font-size: 0.85rem;
+.friend.offline {
     color: var(--text-secondary);
 }
 
-.terms-group a {
-    color: var(--primary-orange);
-    text-decoration: none;
-}
-
-.terms-group a:hover {
-    text-decoration: underline;
+.friend.offline img {
+    filter: grayscale(80%);
 }
