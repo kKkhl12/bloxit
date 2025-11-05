@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BloxIt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- ===== LEFT NAVIGATION SIDEBAR ===== -->
+        <nav class="sidebar">
+            <h1 class="sidebar-logo">B</h1>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-tooltip="Play"><i class="fas fa-gamepad"></i></a></li>
+                <li><a href="#" class="nav-link" data-tooltip="Leaderboards"><i class="fas fa-trophy"></i></a></li>
+                <li><a href="#" class="nav-link" data-tooltip="Teams"><i class="fas fa-users"></i></a></li>
+                <li><a href="#" class="nav-link" data-tooltip="Stats"><i class="fas fa-chart-bar"></i></a></li>
+            </ul>
+            <div class="nav-footer">
+                <a href="#" class="nav-link" data-tooltip="Settings"><i class="fas fa-cog"></i></a>
+                <a href="index.html" class="nav-link" data-tooltip="Logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </nav>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="user-profile">
+                    <i class="fas fa-bell"></i>
+                    <div class="profile-details">
+                        <span class="username">Player123</span>
+                        <span class="user-elo">1,250 Elo</span>
+                    </div>
+                    <img src="https://placehold.co/40x40/2A2A2A/E0E0E0?text=A" alt="User Avatar" class="user-avatar">
+                </div>
+            </header>
+
+            <!-- Play Card & Recent Matches -->
+            <div class="content-area">
+                <div class="play-card">
+                    <div class="game-info">
+                        <h3>DEFUSE DIVISION</h3>
+                        <p>5v5 Competitive Matchmaking</p>
+                    </div>
+                    <a href="#" class="play-button">PLAY</a>
+                </div>
+
+                <div class="recent-matches">
+                    <h4>Recent Matches</h4>
+                    <div class="match-item win">
+                        <div class="match-map">Station</div>
+                        <div class="match-score">13 - 8</div>
+                        <div class="match-kda">21 / 12 / 5</div>
+                        <div class="match-result">Victory</div>
+                    </div>
+                    <div class="match-item loss">
+                        <div class="match-map">Bazaar</div>
+                        <div class="match-score">4 - 13</div>
+                        <div class="match-kda">8 / 15 / 3</div>
+                        <div class="match-result">Defeat</div>
+                    </div>
+                    <div class="match-item win">
+                        <div class="match-map">Exhibit</div>
+                        <div class="match-score">13 - 10</div>
+                        <div class="match-kda">18 / 14 / 9</div>
+                        <div class="match-result">Victory</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ===== RIGHT SOCIAL SIDEBAR ===== -->
+        <aside class="social-sidebar">
+            <h4>Friends</h4>
+            <ul class="friends-list">
+                <li class="friend online">
+                    <img src="https://placehold.co/32x32/FF6600/FFFFFF?text=R" alt="Friend Avatar">
+                    <span>Robloxian_Pro</span>
+                </li>
+                <li class="friend online">
+                    <img src="https://placehold.co/32x32/5865F2/FFFFFF?text=A" alt="Friend Avatar">
+                    <span>AwesomeDude</span>
+                </li>
+                <li class="friend offline">
+                    <img src="https://placehold.co/32x32/777777/FFFFFF?text=G" alt="Friend Avatar">
+                    <span>GamerGirl99</span>
+                </li>
+                <li class="friend offline">
+                    <img src="https://placehold.co/32x32/777777/FFFFFF?text=S" alt="Friend Avatar">
+                    <span>ShadowSniper</span>
+                </li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>
